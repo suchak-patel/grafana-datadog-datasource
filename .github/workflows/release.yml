@@ -79,7 +79,7 @@ jobs:
       - name: Sign plugin
         run: yarn sign --rootUrls ${{ vars.GRAFANA_ROOT_URLS }}
         env:
-          GRAFANA_ACCESS_POLICY_TOKEN: ${{ secrets.GRAFANA_ACCESS_POLICY_TOKEN }} # Requires a Grafana Access Policy Token from Grafana.com.
+          GRAFANA_API_KEY: ${{ secrets.GRAFANA_ACCESS_POLICY_TOKEN }} # Requires a Grafana Access Policy Token from Grafana.com.
 
       - name: Get plugin metadata
         id: metadata
