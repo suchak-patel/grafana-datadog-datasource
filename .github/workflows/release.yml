@@ -77,7 +77,7 @@ jobs:
           args: buildAll
 
       - name: Sign plugin
-        run: yarn sign --rootUrls ${{ env.GRAFANA_ROOT_URLS }}
+        run: yarn sign --rootUrls ${{ vars.GRAFANA_ROOT_URLS }}
         env:
           GRAFANA_ACCESS_POLICY_TOKEN: ${{ secrets.GRAFANA_ACCESS_POLICY_TOKEN }} # Requires a Grafana Access Policy Token from Grafana.com.
 
