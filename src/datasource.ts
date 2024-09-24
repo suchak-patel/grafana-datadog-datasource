@@ -132,7 +132,15 @@ export class DataSource extends DataSourceApi<MyQuery, MyDataSourceOptions> {
       let textArray: string[] = frame.split(':');
 
       if (splitQuery[1] === textArray[0]) {
-        return { text: textArray[1] };
+        let textValue = '';
+        for (let i = 1; i < textArray.length; i++) {
+          if (i === 1) {
+            textValue += textArray[i];
+          } else {
+            textValue = textValue + ':' + textArray[i];
+          }
+        }
+        return { text: textValue };
       }
 
       return false;
